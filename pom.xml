@@ -12,4 +12,82 @@
     <maven.compiler.source>25</maven.compiler.source>
     <maven.compiler.target>25</maven.compiler.target>
   </properties>
+  <!-- dependencies -->
+  <dependencies>
+  <!-- LWJGL core bindings -->
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl</artifactId>
+    <version>3.3.6</version>
+  </dependency>
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl-glfw</artifactId>
+    <version>3.3.6</version>
+  </dependency>
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl-opengl</artifactId>
+    <version>3.3.6</version>
+  </dependency>
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl-stb</artifactId>
+    <version>3.3.6</version>
+  </dependency>
+
+  <!-- LWJGL native binaries for Windows (amd64) -->
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl</artifactId>
+    <version>3.3.6</version>
+    <classifier>natives-windows</classifier>
+  </dependency>
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl-glfw</artifactId>
+    <version>3.3.6</version>
+    <classifier>natives-windows</classifier>
+  </dependency>
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl-opengl</artifactId>
+    <version>3.3.6</version>
+    <classifier>natives-windows</classifier>
+  </dependency>
+  <dependency>
+    <groupId>org.lwjgl</groupId>
+    <artifactId>lwjgl-stb</artifactId>
+    <version>3.3.6</version>
+    <classifier>natives-windows</classifier>
+  </dependency>
+
+  <!-- JOML for math -->
+  <dependency>
+    <groupId>org.joml</groupId>
+    <artifactId>joml</artifactId>
+    <version>1.10.8</version>
+  </dependency>
+
+  <!-- Exec plugin dependency (though plugin declared below) -->
+  <dependency>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>exec-maven-plugin</artifactId>
+    <version>3.1.0</version>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>exec-maven-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <mainClass>com.aetherwave.engine.App</mainClass>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
 </project>
